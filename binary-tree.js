@@ -74,7 +74,7 @@ class BinaryTree {
 
 	}        	
 
-	/*getMin(node){
+	getMin(node){
 
 		if (node.left == null) {
 			return node;
@@ -82,7 +82,7 @@ class BinaryTree {
 			return getMin(node.left);
 		}
 
-	}*/
+	}
 	
 	removeNode(node, data){
 
@@ -112,11 +112,11 @@ class BinaryTree {
 				return node.left;
 			}
 
-			/*var tempNode = this.getMin(node.right);
+			var tempNode = this.getMin(node.right);
 
 			node.data = tempNode.data;
 			node.right = this.removeNode(node.right, tempNode.data);
-			return node;*/
+			return node;
 
 		} else if (data < node.data){
 			node.left = this.removeNode(node.left, data);
