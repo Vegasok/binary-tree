@@ -79,12 +79,11 @@ class BinaryTree {
       		return 0;
 	    }
 	   
-	    if(node.left){	
-	        	
-	    	return getSmallest(node.left);
+	    if(!node.left){		        	
+	    	return node;
 	    }
 
-	  		return node;		
+	  				
 	}
 	
 	removeNode(node, data){
