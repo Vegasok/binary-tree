@@ -79,7 +79,7 @@ class BinaryTree {
 		if (node.left == null) {
 			return node;
 		} else {
-			return getMin(node.left);
+			return this.getMin(node.left);
 		}
 
 	}
