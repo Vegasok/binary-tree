@@ -63,6 +63,7 @@ class BinaryTree {
 		}
 	}
 
+
 	remove(data) {
 		
 		if (this.root == null){
@@ -70,21 +71,17 @@ class BinaryTree {
 		}
 
 		this.removeNode(this.root, data);
-		
-	}
 
-	getSmallest(node){
+	}        	
 
-		if(!node){
-      		return 0;
-	    }
-	   
-	    if(node.right){	
-	        	
-	    	return getSmallest(node.right);
-	    }
+	getMin(node){
 
-	  		return node;		
+		if (node.left == null) {
+			return node;
+		} else {
+			return getMin(node.left);
+		}
+
 	}
 	
 	removeNode(node, data){
@@ -96,6 +93,11 @@ class BinaryTree {
 		if (node == null) {			
 			return null;
 		}
+
+		if (data == false) {
+			return;
+		}
+
 		if (data == node.data) {
 			
 			if (node.left == null && node.right == null) {				
@@ -110,7 +112,7 @@ class BinaryTree {
 				return node.left;
 			}
 
-			var tempNode = this.getSmallest(node.right);
+			var tempNode = this.getMin(node.right);
 
 			node.data = tempNode.data;
 			node.right = this.removeNode(node.right, tempNode.data);
