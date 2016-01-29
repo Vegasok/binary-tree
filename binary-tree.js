@@ -74,10 +74,6 @@ class BinaryTree {
 	}
 
 	getSmallest(node){
-
-		if(!node){
-      		return 0;
-	    }
 	   
 	    if(!node.left){		        	
 	    	return node;
